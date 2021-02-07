@@ -1,11 +1,14 @@
 const searchMeal = () => {
-    const mealYouSelect = document.getElementById('search-input').value;
+    const ingredients = document.getElementById('meal-ingredients-area')
+    ingredients.style.display='none';
     document.getElementById('meals-item-area').innerText = " ";
+    const mealYouSelect = document.getElementById('search-input').value;
     const url = `https://www.themealdb.com/api/json/v1/1/search.php?f=${mealYouSelect}`;
     fetch(url)
         .then(res => res.json())
         .then(data => displayMealsItem(data))
-        .catch(err=>alert("Search result did not match.Please try only first letter of the food name"));
+        .catch(err=>alert("Search result did not match.Please try only first letter of the food name"));   
+       
 }
 
 const displayMealsItem = data => {
