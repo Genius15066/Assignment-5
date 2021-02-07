@@ -37,7 +37,7 @@ const mealIngredients = mealId => {
 const recipe = mealsRecipe => {
     const recipeElement = [];
 
-    for (let i = 1; i < 20; i++) {
+    for (let i = 1; i <= 20; i++) {
         const mealIngredientsList = mealsRecipe[`strIngredient${i}`];
         const mealMeasurement = mealsRecipe[`strMeasure${i}`]
         if (mealIngredientsList) {
@@ -61,7 +61,7 @@ const recipe = mealsRecipe => {
     mealIngredientsDescription.innerHTML = `
     <img class="style-image-meal" src="${mealsRecipe.strMealThumb}" alt="">
     <h1>${mealsRecipe.strMeal}</h1>
-    <h3 > Ingredients</h3>
+    <h3>Ingredients</h3>
     `
     mealIngredientsDescription.appendChild(ul);
 }
